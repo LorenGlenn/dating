@@ -1,21 +1,36 @@
+
+var gender, hobby, shoe, other, sarah, shia;
+
 $(document).ready(function() {
-  var gender, hobby, shoe;
+
+  sarah = function() {
+      $("#shia, #sad").hide();
+      $("#sarah").show();
+  };
+  shia = function() {
+    $("#sarah, #sad").hide();
+    $("#shia").show();
+  };
+  other = function() {
+    $("#shia, #sarah").hide();
+    $("#sad").show();
+  };
   $("#submit").click(function() {
     gender = $("#sex").val();
     hobby = $("#hobby").val();
     shoe = $("#shoe").val();
-
-    if (gender === "male" && hobby === "eating" && shoe === "small") {
-      $("#shia, #sad").hide();
-      $("#sarah").show();
-    }
-    else if (gender === "female" && hobby === "pokemon" && shoe === "big") {
-      $("#sarah, #sad").hide();
-      $("#shia").show();
-    }
-    else {
-      $("#shia, #sarah").hide();
-      $("#sad").show();
-    };
+    calculate(gender, hobby, shoe);
   });
 });
+
+var calculate = function(gender, hobby, shoe){
+  if (gender === "male" && hobby === "eating" && shoe === "small") {
+    sarah();
+  }
+  else if (gender === "female" && hobby === "pokemon" && shoe === "big") {
+    shia();
+  }
+  else {
+    other();
+  };
+};
