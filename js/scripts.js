@@ -1,6 +1,18 @@
 
 var gender, hobby, shoe, other, sarah, shia;
 
+var calculate = function(gender, hobby, shoe){
+  if (gender === "male" && hobby === "eating" && shoe === "small") {
+    sarah();
+  }
+  else if (gender === "female" && hobby === "pokemon" && shoe === "big") {
+    shia();
+  }
+  else {
+    other();
+  };
+};
+
 $(document).ready(function() {
 
   sarah = function() {
@@ -22,15 +34,3 @@ $(document).ready(function() {
     calculate(gender, hobby, shoe);
   });
 });
-
-var calculate = function(gender, hobby, shoe){
-  if (gender === "male" && hobby === "eating" && shoe === "small") {
-    sarah();
-  }
-  else if (gender === "female" && hobby === "pokemon" && shoe === "big") {
-    shia();
-  }
-  else {
-    other();
-  };
-};
